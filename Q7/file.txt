@@ -1,0 +1,1 @@
+parentChild.o: ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, interpreter /lib64/l, for GNU/Linux 3.2.0, BuildID[sha1]=6dab001c2b573bf177beb7130e9ab50a3bd2f4c0, not stripped

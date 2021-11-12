@@ -1,0 +1,2 @@
+   text	   data	    bss	    dec	    hex	filename
+   4118	    720	      8	   4846	   12ee	parentChild.o
