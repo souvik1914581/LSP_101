@@ -1,0 +1,3 @@
+after file is opened in RD_ONLY mode, and we do a dup call to duplicate the sourceFileFd to descriptor 0(STDIN), using dup2(sourceFd,0),  descriptor 0 is silently closed before being reused. This happens atomically. Descriptor 0 now refers to the source file which we had opened in RD_ONLY mode. 
+
+Subsequently, when we read from STDIN(0) and write to STDOUT(1), our program reads from the source file, and outputs it to STDOUT.

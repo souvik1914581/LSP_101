@@ -1,0 +1,21 @@
+After R3:
+	rishab@rishab-VirtualBox:~/Coding/Trainings/LSP_Wipro$ cat /proc/2785/fdinfo/3
+pos:	120
+flags:	0104000
+mnt_id:	26
+rishab@rishab-VirtualBox:~/Coding/Trainings/LSP_Wipro$ cat /proc/2785/fdinfo/4
+pos:	120
+flags:	0104000
+mnt_id:	26
+
+After R4:
+
+rishab@rishab-VirtualBox:~/Coding/Trainings/LSP_Wipro$ cat /proc/2785/fdinfo/3
+pos:	220
+flags:	0104000
+mnt_id:	26
+rishab@rishab-VirtualBox:~/Coding/Trainings/LSP_Wipro$ cat /proc/2785/fdinfo/4
+pos:	220
+flags:	0104000
+mnt_id:	26
+
