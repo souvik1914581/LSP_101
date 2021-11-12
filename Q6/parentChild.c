@@ -6,6 +6,7 @@
 #include <errno.h>
 #include <limits.h>
 #include <string.h>
+#include <sys/time.h>
 int main(int argc,char **argv)
 {
 	if(argc < 2)
@@ -19,7 +20,7 @@ int main(int argc,char **argv)
 	int *pids = NULL;
 	int i = -1;
 	int wStatus = -1;
-
+	long int randVal = -1;
 		
 	/*zeroing the errno before using strtol*/
 	errno = 0;
@@ -70,10 +71,18 @@ int main(int argc,char **argv)
 		else if(pids[i] == 0)
 		{
 			/*child process*/
-			retVal = random() % 10;
-			printf("Child %d sleeptime = %d secs\n",i+1,retVal);
-			sleep(retVal);
-			exit(retVal);
+			struct timeval tv;
+			memset(&tv,0,sizeof(struct timeval));
+			retVal = gettimeofday(&tv,NULL);
+			if(retVal == -1)
+			{
+				perror("gettimeofday\n");
+			}
+			srandom(tv.tv_usec);
+			randVal = random() % 10;
+			printf("Child %d sleeptime = %ld secs\n",i+1,randVal);
+			sleep(randVal);
+			exit(randVal);
 			
 		}
 	}
